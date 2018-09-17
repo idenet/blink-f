@@ -1,0 +1,21 @@
+var getIndex = function(index) {
+  return index < 10 ? '0' + index : index
+}
+
+var format = function(text) {
+  if(!text) {
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g')
+  return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function(array, length) {
+  return array.slice(0, length)
+}
+
+module.exports = {
+  getIndex: getIndex,
+  format: format,
+  limit: limit
+}

@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="header">
+    <w-episode class="episode" index="{{classic.index}}" />
+    <w-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+  </view>
+  <w-movie hiddened="{{classic.type !== 100}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <w-music wx:if="{{classic.type === 200}}" src="{{classic.url}}" img="{{classic.image}}" content="{{classic.content}}" title="{{classic.title}}"/>
+  <w-essay hiddened="{{classic.type !== 300}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <w-navi bind:left="onNext" bind:right="onPrevious" title="{{classic.title}}" first="{{first}}" latest="{{latest}}" class="navi" />
+</view>
